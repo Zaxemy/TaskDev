@@ -32,5 +32,9 @@ async def update_task(session: AsyncSession, task_schema: TaskUpdate, task: Task
     await session.commit()
     await session.refresh(task)
     return task
+
+async def delete_task(session: AsyncSession, task: Task) -> None:
+    await session.delete(task)
+    await session.commit()
     
 
