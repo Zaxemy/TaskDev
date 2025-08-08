@@ -2,10 +2,11 @@ db.sqlite3
 
 
 
-venv/
+.venv/
 
 __pycache__/
 
 
 
 
+TaskDev.sqlite3
