@@ -11,20 +11,20 @@ from core.Dependencies.tasks import get_task_by_id
 
 router = APIRouter()
 
-@router.get("/", response_model=list[TaskResponse])
+@router.get("/", response_model=list[TaskResponse], tags=["Tasks"], summary="Get All Tasks")
 async def get_tasks(session: AsyncSession = Depends(db_helper.get_db)):
     return await crud.get_tasks(session=session)
 
 
-@router.post("/", response_model=TaskResponse,status_code=201)
+@router.post("/", response_model=TaskResponse,status_code=201, tags=["Tasks"], summary="Create Task")
 async def create_task(task_schema: TaskCreate, session: AsyncSession = Depends(db_helper.get_db)):
     return await crud.create_task(task_schema=task_schema, session=session)
 
-@router.get("/{task_id}/", response_model=TaskResponse)
+@router.get("/{task_id}/", response_model=TaskResponse, tags=["Tasks"], summary="Get task by id")
 async def get_task(task: Task = Depends(get_task_by_id)):
     return task
 
-@router.patch("/{task_id}/", response_model=TaskResponse)
+@router.patch("/{task_id}/", response_model=TaskResponse, tags=["Tasks"], summary="Edit task")
 async def update_task(
     task_schema: TaskUpdate,
     task: Task = Depends(get_task_by_id),
@@ -37,7 +37,7 @@ async def update_task(
         task_schema=task_schema,
         task=task  
     )
-@router.delete("/{task_id}/",status_code=204)
+@router.delete("/{task_id}/",status_code=204, tags=["Tasks"], summary="delete task")
 async def delete_task(task: Task = Depends(get_task_by_id),session: AsyncSession = Depends(db_helper.get_db)):
     await crud.delete_task(task=task, session=session)
 
