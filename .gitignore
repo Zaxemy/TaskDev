@@ -10,3 +10,5 @@ __pycache__/
 
 
 TaskDev.sqlite3
+certificates/private.pem
+certificates/public.pem

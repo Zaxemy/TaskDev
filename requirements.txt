@@ -10,3 +10,7 @@ pydantic-settings
 uvicorn
 
 pytest
+
+Pyjwt
+
+cryptography
