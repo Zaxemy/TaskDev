@@ -2,7 +2,7 @@ import jwt
 from core.config import settings
 from datetime import datetime, timedelta, timezone
 from passlib.context import CryptContext
-import jwt
+
 
 
 
