@@ -7,7 +7,7 @@ from core.models import users as models
 from core.models.db_helper import db_helper
 from fastapi import status
 from core.schemas.users import TokenData
-
+from sqlalchemy import select
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
@@ -30,7 +30,9 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: AsyncSession
     except jwt.PyJWTError:
         raise credentials_exception
 
-    user = db.query(models.User).filter(models.User.username == token_data.username).first()
+    stmt = select(models.User).where(models.User.username == token_data.username)
+    result = await db.execute(stmt)
+    user = result.scalar_one()
     if user is None:
         raise credentials_exception
     return user
