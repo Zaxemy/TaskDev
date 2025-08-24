@@ -28,13 +28,13 @@ async def get_task(session: AsyncSession, task_id: int):
 async def update_task(session: AsyncSession, task_schema: TaskUpdate, task: Task):
     for name, value in task_schema.model_dump(exclude_unset=True).items():
         setattr(task, name, value)
-    session.add(task)
+    session.add(task) # Заменить на нормальный апдейт из sqlalchemy
     await session.commit()
     await session.refresh(task)
     return task
 
 async def delete_task(session: AsyncSession, task: Task) -> None:
-    await session.delete(task)
+    await session.delete(task) # Удалять по ID
     await session.commit()
     
 

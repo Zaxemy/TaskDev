@@ -10,4 +10,4 @@ app.include_router(users_router)
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="localhost", port=6969, reload=True)
+    uvicorn.run("main:app", host="localhost", port=6969, reload=True) # Вынести все в конфиг
