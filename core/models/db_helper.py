@@ -26,7 +26,7 @@ class DatabaseHelper:
         async with self.session_factory() as session:
             try:
                 yield session
-                await session.commit()
+                await session.commit() # Убрать, оставить просто yield session
             except Exception:
                 await session.rollback()
                 raise

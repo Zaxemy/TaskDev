@@ -7,5 +7,5 @@ class Task(Base):
 
     title: Mapped[str] = mapped_column(String(64), unique=True)
     description: Mapped[str] = mapped_column(String(256))
-    is_complete: Mapped[bool] = mapped_column(default=False)
+    is_complete: Mapped[bool] = mapped_column(default=False) # Заменить на Enum, postgres такое поддерживает
 

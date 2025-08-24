@@ -20,6 +20,6 @@ class TaskUpdate(BaseModel):
         default=None,
         max_length=256,
     )
-    is_complete: bool | None = Field(
+    is_complete: bool | None = Field( # Убрать Field, просто bool | None = None
         default=None,
     )

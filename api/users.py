@@ -1,3 +1,9 @@
+"""
+Неправильно: ```response_model=...```
+Правильно ```def(*args, **kwargs) -> ...:```
+
+Везде делай через typing.Annotated
+"""
 from fastapi import APIRouter, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from core.models.users import User
@@ -11,7 +17,6 @@ from core.schemas import users as schemas
 from sqlalchemy import select
 from core.models import users as models
 from core.Dependencies.auth import get_current_user
-
 
 router = APIRouter(prefix="/users")
 
