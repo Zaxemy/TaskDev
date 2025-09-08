@@ -1,15 +1,16 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from core.models.tasks import Task
 from core.schemas.tasks import TaskCreate, TaskResponse, TaskUpdate
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import Depends
 from core.models.db_helper import db_helper
 from crud import tasks as crud
-from core.schemas.tasks import TaskCreate
 from core.Dependencies.tasks import get_task_by_id
 
 
 router = APIRouter(prefix="/tasks")
+
+
 
 
 @router.get(

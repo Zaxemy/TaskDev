@@ -7,10 +7,17 @@ aiosqlite
 pydantic
 
 pydantic-settings
+
 uvicorn
 
 pytest
+pytest-asyncio
+httpx
 
 Pyjwt
 
 cryptography
+
+passlib[bcrypt]
+
+asyncpg

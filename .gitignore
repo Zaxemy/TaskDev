@@ -2,7 +2,7 @@ db.sqlite3
 
 
 
-.venv/
+venv/
 
 __pycache__/
 
@@ -12,3 +12,8 @@ __pycache__/
 TaskDev.sqlite3
 certificates/private.pem
 certificates/public.pem
+certificates/
+
+.vscode/
+tests/test_some.py
+tests/__init__.py

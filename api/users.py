@@ -1,6 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from core.models.users import User
+from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import Depends
 from core.models.db_helper import db_helper
@@ -8,7 +7,6 @@ from crud import users as crud_user
 from fastapi import status
 from utils import jwt_auth as security
 from core.schemas import users as schemas
-from sqlalchemy import select
 from core.models import users as models
 from core.Dependencies.auth import get_current_user
 

@@ -1,5 +1,5 @@
 from fastapi import Depends, HTTPException
-from utils.jwt_auth import encode_jwt, decode_jwt
+from utils.jwt_auth import decode_jwt
 from fastapi.security import OAuth2PasswordBearer
 import jwt
 from sqlalchemy.ext.asyncio import AsyncSession
