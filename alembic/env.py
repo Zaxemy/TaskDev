@@ -23,6 +23,8 @@ if config.config_file_name is not None:
 from core.models.base import Base
 from core.models.tasks import Task
 from core.models.users import User
+from core.models.access_token import AccessToken
+
 
 target_metadata = Base.metadata
 
