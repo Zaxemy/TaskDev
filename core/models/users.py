@@ -1,5 +1,5 @@
 from .base import Base
-from fastapi_users.db import SQLAlchemyBaseUserTable, SQLAlchemyUserDatabase
+from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTable, SQLAlchemyUserDatabase
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import Integer
 from typing import TYPE_CHECKING
