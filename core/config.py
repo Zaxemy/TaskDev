@@ -8,19 +8,15 @@ class DataBaseSettings(BaseModel):
     echo: bool = True
 
 
-class AccessToken(BaseModel):
-    lifetime_seconds: int = 3600
-
-
 class JWTAuth(BaseModel):
-    private_key_path: Path = Path("certificates") / "private.pem"
-    public_key_path: Path = Path("certificates") / "public.pem"
-    algorithm: str = "RS256"
+    SECRET: str = "993Nqs9GkGgF7NwDmJc3xE2wI6S1De3XPreg70SXu-E"
+
+    ALGORITHM: str = "HS256"
+    LIFETIME_SECONDS: int = 3600
 
 
 class Settings(BaseSettings):
     db: DataBaseSettings = DataBaseSettings()
-    access_token: AccessToken = AccessToken()
     jwt_auth: JWTAuth = JWTAuth()
 
 
