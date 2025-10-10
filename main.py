@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-import uvicorn
 from api.tasks import router as tasks_router
 from core.Dependencies.auth import fastapi_users
 from core.authentication.auth_backend import auth_backend
@@ -27,6 +26,3 @@ app.include_router(
     tags=["users"],
 )
 
-
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="localhost", port=6969, reload=True)

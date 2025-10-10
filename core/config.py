@@ -1,10 +1,9 @@
 from pydantic_settings import BaseSettings
 from pydantic import BaseModel
-from pathlib import Path
 
 
 class DataBaseSettings(BaseModel):
-    db_url: str = "sqlite+aiosqlite:///TaskDev.sqlite3"
+    db_url: str = "postgresql+asyncpg://postgres:12345@db:5432/taskdev"
     echo: bool = True
 
 
