@@ -1,0 +1,29 @@
+[project]
+name = "taskdev"
+version = "0.1.0"
+description = "TaskDev FastAPI application"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "alembic",
+    "asyncpg",
+    "sqlalchemy",
+    "pydantic",
+    "pydantic-settings",
+    "uvicorn",
+    "PyJWT",
+    "cryptography",
+    "fastapi-users",
+    "fastapi-users-db-sqlalchemy",
+    "passlib[bcrypt]",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["api", "core", "crud"]
+
+[dependency-groups]
+dev = []

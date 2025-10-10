@@ -9,8 +9,10 @@ if TYPE_CHECKING:
     from sqlalchemy.ext.asyncio import AsyncSession
 
 
-async def get_user_db(session: Annotated[
+async def get_user_db(
+    session: Annotated[
         "AsyncSession",
         Depends(db_helper.get_db),
-    ],):
-    yield SQLAlchemyUserDatabase(session, User)
+    ],
+):
+    yield SQLAlchemyUserDatabase(session=session, user_table=User)
