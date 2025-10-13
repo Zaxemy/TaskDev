@@ -1,10 +1,11 @@
 from pydantic_settings import BaseSettings
 from pydantic import BaseModel
+import os
 
 
 class DataBaseSettings(BaseModel):
-    db_url: str = "postgresql+asyncpg://postgres:12345@db:5432/taskdev"
-    echo: bool = True
+    db_url: str = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:12345@db:5432/taskdev")
+    echo: bool = os.getenv("DB_ECHO", "true").lower() == "true"
 
 
 class JWTAuth(BaseModel):
