@@ -2,7 +2,9 @@ from fastapi import FastAPI
 from api.tasks import router as tasks_router
 from core.Dependencies.auth import fastapi_users
 from core.authentication.auth_backend import auth_backend
+from core.authentication.manage_auth import get_user_manager
 from core.schemas import users as user_schemas
+from core.models.db_helper import db_helper
 
 
 app = FastAPI()

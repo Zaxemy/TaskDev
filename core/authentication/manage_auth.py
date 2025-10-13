@@ -3,7 +3,8 @@ from fastapi_users import BaseUserManager, IntegerIDMixin
 from core.models.users import User
 from core.config import settings
 import logging
-
+from fastapi import Depends
+from core.Dependencies.users import get_user_db
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +29,6 @@ class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
         )
 
 
-async def get_user_manager(user_db):
+async def get_user_manager(user_db=Depends(get_user_db)):
     """Получение User_Manager"""
     yield UserManager(user_db)
