@@ -26,4 +26,26 @@ build-backend = "hatchling.build"
 packages = ["api", "core", "crud"]
 
 [dependency-groups]
-dev = []
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+    "anyio",
+    "asgi-lifespan",
+    "pygments",
+    "aiosqlite",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+    "anyio",
+    "asgi-lifespan",
+    "pygments",
+    "aiosqlite",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

@@ -19,7 +19,7 @@ async def create_task(session: AsyncSession, task_schema: TaskCreate, user_id: i
 
 async def get_tasks(session: AsyncSession, user_id: int):
     stmt = select(Task).where(Task.user_id == user_id).order_by(Task.id)
-    result = session.execute(stmt)
+    result = await session.execute(stmt)
     return result.scalars().all()   
 
 async def get_task(session: AsyncSession, task_id: int, user_id: int):

@@ -8,7 +8,6 @@ class Task(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(String(64))
-    description: Mapped[str] = mapped_column(String(256))
+    description: Mapped[str | None] = mapped_column(String(256), nullable=True)
     is_complete: Mapped[bool] = mapped_column(default=False)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
-
