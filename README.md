@@ -206,19 +206,6 @@ The project follows Python best practices and uses:
 5. Add tests in `tests/`
 6. Update migrations if needed
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Run the test suite
-6. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
-
 ## Support
 
 For questions or issues, please open an issue on the GitHub repository.
