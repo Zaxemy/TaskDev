@@ -152,43 +152,6 @@ pytest
 pytest --cov=.
 ```
 
-## API Usage Examples
-
-### Register a User
-```bash
-curl -X POST "http://localhost:7777/auth/register" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "user@example.com",
-    "password": "password123"
-  }'
-```
-
-### Login
-```bash
-curl -X POST "http://localhost:7777/auth/jwt/login" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "username=user@example.com&password=password123"
-```
-
-### Create a Task
-```bash
-curl -X POST "http://localhost:7777/tasks/" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "title": "Complete project documentation",
-    "description": "Write comprehensive README and API docs",
-    "is_complete": false
-  }'
-```
-
-### Get All Tasks
-```bash
-curl -X GET "http://localhost:7777/tasks/" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
-```
-
 ## Development
 
 ### Code Style
